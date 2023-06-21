@@ -59,7 +59,7 @@ app.use(yetkiRoutes);
 
 mongoose
   .connect(MONGODB_URI).then((result) => {
-    app.listen(proccess.env.PORT || 3000);
+    app.listen(process.env.PORT || 3000);
   })
   .catch((err) => {
     console.log(err);
