@@ -29,7 +29,7 @@ exports.postGiris = (req, res, next) => {
              res.redirect('/');
           })
         }
-        return res.render('/giris');
+        res.render('/giris');
       })
       .catch(err => {
         console.log(err);
