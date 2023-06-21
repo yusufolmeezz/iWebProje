@@ -1,0 +1,27 @@
+<main class="flex-shrink-0">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+      <div class="container px-5">
+          <a class="navbar-brand"><span class="fw-bolder text-primary" style="font-size: 21px;">Announce</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-weight: 8000">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                  <li class="nav-item"><a class="nav-link" href="/">Anasayfa</a></li>
+                  
+                  
+                  
+                  
+
+                  <% if(yonetici) {%>
+                    <li class="nav-item"><a class="nav-link" href="/duyuruekle">Duyuru Ekle</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/cikis">Çıkış Yap</a></li>
+        
+                  <% }else { %>
+                    <li class="nav-item"><a class="nav-link" href="/giris">Giriş Yap</a></li>
+                    <% } %>
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+ 
