@@ -10,19 +10,15 @@ exports.getGiris = (req, res, next) => {
         });
     
 };
-
-
 exports.postGiris = (req, res, next) => {
     const eposta = req.body.eposta;
     const sifre = req.body.sifre;
 
     Kullanici.findOne({eposta:eposta})
     .then(kullanici => {
-      if(!kullanici) {
-        
+      if(!kullanici) {      
         return res.redirect('/giris');
       }
-
       bcrypt
       .compare(sifre, kullanici.sifre)
       .then(sifreKontrol => {
@@ -33,33 +29,24 @@ exports.postGiris = (req, res, next) => {
              res.redirect('/');
           })
         }
-        return res.render('giris');
-
+        return res.render('/giris');
       })
       .catch(err => {
         console.log(err);
         res.redirect('/giris');
       })
-
-
     })
     .catch(err => {
-      
       console.log(err);
       res.redirect('/giris');
     })
 };
-
-exports.getCikis = (req, res, next) => {
-   
+exports.getCikis = (req, res, next) => { 
     req.session.destroy(err => {
         console.log(err);
         res.redirect('/');
-    })
-        
+    })      
 };
-
-
 exports.getKayit = (req, res, next) => {
   
          res.render("kayit", {

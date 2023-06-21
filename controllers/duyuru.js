@@ -32,7 +32,7 @@ exports.getDuyuru = (req, res, next) => {
 
 exports.getDuyuruEkle = (req, res, next) => {
   res.render("duyuruekle", {
-    sayfaBasligi: "",
+    sayfaBasligi: "duyuru ekleme sayfası",
     baslikGoster: 2,
     yol: "/duyuruekle"
 

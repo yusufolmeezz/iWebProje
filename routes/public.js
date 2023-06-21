@@ -3,9 +3,6 @@ const path=require('path');
 
 const router=express.Router();
 
-const rootDir=require('../util/path');
-const yoneticiVerisi = require('./yonetici');
-
 const duyuruController=require('../controllers/duyuru');
 const yetkiKontrol = require('../util/yetkiKontrol');
 
