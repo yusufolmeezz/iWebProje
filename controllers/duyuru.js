@@ -1,11 +1,10 @@
 const Duyuru = require("../models/duyuru");
 
-
 exports.getDuyurular = (req, res, next) => {
   Duyuru.find()
     .then((duyurular) => {
       res.render("index", {
-        sayfaBasligi: "Duyuru Listemiz",
+        sayfaBasligi: "Duyuru Listesi",
         duyurular: duyurular,
         yönetici: false
 
@@ -22,7 +21,7 @@ exports.getDuyuru = (req, res, next) => {
   Duyuru.findById(duyuruId)
     .then((duyuru) => {
       res.render("duyuruekle", {
-        sayfaBasligi: "Ürün Bilgisi",
+        sayfaBasligi: "Duyurular",
         duyuru: duyuru,
         yol: "/"
 
@@ -39,7 +38,6 @@ exports.getDuyuruEkle = (req, res, next) => {
 
   });
 };
-
 
 exports.postDuyuru = (req, res, next) => {
   const duyuru_baslik = req.body.duyuru_baslik;
@@ -61,8 +59,6 @@ exports.postDuyuru = (req, res, next) => {
       console.log(err);
     });
 };
-
-
 
 exports.postSilId = (req, res, next) => {
   const duyuruId = req.body.duyuruId;

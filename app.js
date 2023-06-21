@@ -54,8 +54,7 @@ app.use(yoneticiVerisi.routes);
 app.use(publicRoutes);
 app.use(yetkiRoutes);
 
-
-
+app.use(hataController.getHata404);
 
 mongoose
   .connect(MONGODB_URI).then((result) => {
