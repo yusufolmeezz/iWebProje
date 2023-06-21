@@ -1,7 +1,7 @@
 const Duyuru = require("../models/duyuru");
 
 exports.getDuyurular = (req, res, next) => {
-  Duyuru.find()
+  Duyuru.find().sort({ _id: -1})
     .then((duyurular) => {
       res.render("index", {
         sayfaBasligi: "Duyuru Listesi",
